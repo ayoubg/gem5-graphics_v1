@@ -55,5 +55,3 @@ class CopyEngine(PciDevice):
 
     latBeforeBegin = Param.Latency('20ns', "Latency after a DMA command is seen before it's proccessed")
     latAfterCompletion = Param.Latency('20ns', "Latency after a DMA command is complete before it's reported as such")
-
-

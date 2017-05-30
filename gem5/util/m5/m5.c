@@ -266,6 +266,17 @@ do_gpu(int argc, char *argv[])
     m5_gpu(*callno, NULL);
 }
 
+void
+do_util(int argc, char *argv[])
+{
+    if (argc < 1)
+        usage();
+
+    uint64_t* callno = (uint64_t*)argv[0];
+
+    m5_util(*callno, NULL);
+}
+
 #ifdef linux
 void
 do_pin(int argc, char *argv[])
@@ -312,6 +323,7 @@ struct MainFunc mainfuncs[] = {
     { "initparam",      do_initparam,        "" },
     { "sw99param",      do_sw99param,        "" },
     { "gpu",            do_gpu,              "" },
+    { "util",           do_util,             "" },
 #ifdef linux
     { "pin",            do_pin,              "<cpu> <program> [args ...]" }
 #endif
